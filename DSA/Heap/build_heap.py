@@ -18,7 +18,19 @@ def max_heapify(A, i):
     
     return A
 
+def build_heap(A, N):
+    startIdx = N//2-1
+    
+    for i in range(startIdx, -1, -1):
+        max_heapify(A, i)
 
-array = [1,14,10,8,7,9,3,2,4,6]
+def print_heap(A, N):
+    for i in range(N):
+        print(A[i], end = " ")
+    print()
 
-print(max_heapify(array, 0))
+if __name__=='__main__':
+    arr = [1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17]
+    N = len(arr)
+    build_heap(arr, N)
+    print_heap(arr, N)

@@ -1,6 +1,9 @@
+# arr = [9,8,6,5,4,3]
+arr=[20,9,8,7,6,5,4,3]
+key = 12
+
 def swap_element(A, i, j):
     A[i], A[j] = A[j], A[i]
-
 
 def max_heapify(A, i):
     l = 2*i+1
@@ -18,7 +21,15 @@ def max_heapify(A, i):
     
     return A
 
+def insert_new_key(A, key):
+    A.append(key)
+    startIdx = len(A)-1
+    
+    for i in range(startIdx, -1, -1):
+        max_heapify(A, i)
+    return A
+    
+heap = insert_new_key(arr, key)
 
-array = [1,14,10,8,7,9,3,2,4,6]
-
-print(max_heapify(array, 0))
+for i in heap:
+    print(i, end=" ")
