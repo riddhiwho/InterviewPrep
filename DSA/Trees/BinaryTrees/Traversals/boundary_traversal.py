@@ -19,7 +19,7 @@ def printLeaves(root):
         return 
     printLeaves(root.left)
     if root.left is None and root.right is None:
-        print(root.data, enmd = " ")
+        print(root.data, end = " ")
     printLeaves()
 
     
